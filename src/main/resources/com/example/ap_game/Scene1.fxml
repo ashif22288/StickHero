@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ap_game.HelloController">
+   <children>
+<!--       Add ImageView for the background image-->
+      <ImageView fitHeight="700.0" fitWidth="600.0">
+         <image>
+            <Image url="/test.jpg" />
+         </image>
+      </ImageView>
+
+      <Label layoutX="93.0" layoutY="128.0" text="Welcome To Stick Hero">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Label>
+      <Button layoutX="162.0" layoutY="293.0" mnemonicParsing="false" onAction="#startGame" prefHeight="52.0" prefWidth="283.0" style="-fx-background-radius: 10;" text="PLAY">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Button>
+      <Button layoutX="162.0" layoutY="401.0" mnemonicParsing="false" onAction="#terminateProgram" prefHeight="46.0" prefWidth="283.0" style="-fx-background-radius: 10;" text="EXIT">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

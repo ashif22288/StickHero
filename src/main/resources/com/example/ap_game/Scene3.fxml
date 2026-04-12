@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ap_game.HelloController">
+    <children>
+        <ImageView fitHeight="700.0" fitWidth="600.0">
+            <image>
+                <Image url="test.jpg" />
+            </image>
+        </ImageView>
+
+        <!-- Add this Label to display the Score variable -->
+<!--        <Label text="${controller.Score}" layoutX="185.0" layoutY="430.0">-->
+<!--        <Label id = "scoresLable" layoutX="185.0" layoutY="430.0" text="${controller.Scores}">-->
+<!--            <font>-->
+<!--                <Font name="Berlin Sans FB Bold" size="35.0" />-->
+<!--            </font>-->
+<!--        </Label>-->
+
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+        <Text fill="#e3001e" layoutX="102.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GAME OVER!">
+            <font>
+                <Font name="Cooper Black" size="60.0" />
+            </font>
+        </Text>
+        <Text fill="#000000" layoutX="185.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="YOUR SCORE" wrappingWidth="242.74298095703125">
+            <font>
+                <Font name="Berlin Sans FB Bold" size="35.0" />
+            </font>
+        </Text>
+        <Text fill="#000000" layoutX="165.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HIGHEST SCORE">
+            <font>
+                <Font name="Berlin Sans FB Bold" size="35.0" />
+            </font>
+        </Text>
+      <Button layoutX="150.0" layoutY="563.0" mnemonicParsing="false" onAction="#startGame" prefHeight="52.0" prefWidth="114.0" style="-fx-background-radius: 10;" text="RESTART">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="351.0" layoutY="563.0" mnemonicParsing="false" onAction="#terminateProgram" prefHeight="52.0" prefWidth="98.0" style="-fx-background-radius: 10;" text="EXIT">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </Button>
+    </children>
+</AnchorPane>
