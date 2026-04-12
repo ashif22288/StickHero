@@ -1,47 +1,64 @@
+# Stick Hero (JavaFX Implementation)
 
-## STICK HERO'S
+A high-fidelity recreation of the popular "Stick Hero" game, built using **JavaFX**. This project demonstrates the application of Object-Oriented Programming (OOP) principles, implementation of classic Design Patterns, and automated testing in a graphical environment.
 
-The provided code is for a JavaFX application, which is a framework for building desktop applications in Java. The application appears to be a game involving a player moving across a series of hills, with the ability to create ladders and flip downwards. The player's score increases as they progress through the game, and bonus points are awarded for certain actions. The game ends when certain conditions are met, such as the player colliding with a hill.
+## ## Game Overview
 
-The application is organized into several classes, each with its own responsibilities. Here's a more detailed breakdown of the code:
+The player controls a hero who must cross a series of hills by creating ladders of the perfect length. 
 
-1. HelloApplication class: This is the main class that starts the application. It extends the Application class, which is the base class for all JavaFX applications. The start method is the main entry point for all JavaFX applications. It takes a Stage as an argument, which is the top-level container in any JavaFX application. The FXMLLoader.load method is used to load an FXML file, which is an XML-based language that provides the structure for building a user interface separate from the application logic of your code. The getClass().getResource("Scene1.fxml") part is getting the URL of the Scene1.fxml file, which is located in the same package as the HelloApplication class.
+* **Mechanics:** Press and hold the **Spacebar** to grow a ladder. Release it to drop the ladder and walk across.
+* **Challenges:** If the ladder is too short or too long, the hero falls.
+* **Bonus Actions:** Players can flip the hero upside down while walking to collect rewards or avoid obstacles, adding a layer of timing and skill.
 
-2. HelloController class: This class contains the logic for the game. It has several instance variables to keep track of the game state, such as the score, the position of the player, and the state of the game. 
+## ## Features
 
-   - startGame method: This method is called when the game starts. It sets up the game by loading another FXML file (Scene2.fxml), initializing the game objects, and setting up the event handlers for key presses and releases. It also displays the initial game instructions and score on the screen.
+* **Dynamic Terrain:** Hills are procedurally generated with varying widths and distances.
+* **Smooth Animations:** Utilizes `TranslateTransition` and `FadeTransition` for fluid movement and UI effects.
+* **Score Management:** Tracks current session scores and saves high scores.
+* **State Management:** Features a clean flow from the Main Menu to Gameplay and finally to the Game Over/Statistics screen.
 
-   - displayMessage method: This method is used to display messages on the screen. It creates a Label object with the given message, sets its position and style, and adds it to the scene. It also sets up a FadeTransition to make the label fade out after a while.
+## ## Design Patterns Applied
 
-   - handleKeyPress and handleKeyRelease methods: These methods handle the key press and release events. They control the player's actions based on the keys pressed. If the space key is pressed, the ladder starts to grow. If the down key is pressed, the player character flips downwards. If the up key is pressed, the player character flips upwards.
+To ensure the codebase is maintainable and scalable, the following patterns were used:
 
-   - generateHills method: This method generates the hills in the game. It creates a Rectangle object for each hill, sets its size and position, and adds it to the scene. The hills are generated at random positions within a certain range.
+1.  **Singleton Pattern:** Implemented in the `HelloApplication` class to ensure a single, consistent instance of the application and stage management.
+2.  **Factory Pattern:** Used for hill generation. A factory logic handles the creation of `Rectangle` objects, allowing for decoupled generation of game obstacles with varying properties.
+3.  **MVC (Model-View-Controller):** Strict separation of concerns using FXML for the View and `HelloController` for the game logic.
 
-   - moveSubject method: This method moves the player to a new position. It creates a TranslateTransition to animate the movement. After the player has moved, it checks for collisions with cherries and hills.
+## ## Technical Stack
 
-   - terminateGamePlay method: This method is called when the game ends. It updates the high score if necessary and loads a new scene (scene3.fxml).
+* **Language:** Java 17+
+* **Framework:** JavaFX
+* **Build Tool:** Maven
+* **Testing:** JUnit & Mockito
 
-3. HelloApplicationTest class: This is a test class for the HelloApplication class. It uses Mockito to mock the Stage and FXMLLoader classes and verifies that the start method works as expected.
+## ## Getting Started
 
-4. pom.xml file: This is a Maven project file. It specifies the project's dependencies, such as JavaFX and JUnit, and the build configuration.
+### ### Prerequisites
+* JDK 17 or higher
+* Maven installed (or use the integrated Maven wrapper in your IDE)
 
-The game's logic is primarily contained within the HelloController class. The player's actions are controlled by the handleKeyPress and handleKeyRelease methods, which respond to key press and release events. The hills in the game are generated by the generateHills method, which creates a Rectangle object for each hill and adds it to the scene. The player's movement is animated by the moveSubject method, which creates a TranslateTransition to animate the movement. The game ends when the terminateGamePlay method is called, which updates the high score if necessary and loads a new scene.
+### ### Running the Game
+1.  Navigate to the `HelloApplication.java` file.
+2.  Run the `start` method.
+3.  **Controls:**
+    * **Play/Exit:** Main menu buttons.
+    * **Spacebar:** Hold to grow the ladder.
+    * **Up/Down Arrow Keys:** Flip the hero while crossing.
 
-The HelloApplicationTest class is a test class for the HelloApplication class. It uses Mockito to mock the Stage and FXMLLoader classes and verifies that the start method works as expected. This helps ensure that the application's main entry point is functioning correctly.
+## ## Testing
+The project includes unit tests using **Mockito** to verify the application lifecycle and ensure the FXML loaders and Stages initialize correctly without side effects.
 
-The pom.xml file is a Maven project file. It specifies the project's dependencies, such as JavaFX and JUnit, and the build configuration. This helps manage the project's dependencies and build process.
-## DESIGNS PATTERNS
+```bash
+mvn test
+```
 
-1. Use of "Singelton Design Pattern" for HelloApplication.java Class to make sure that their are no multiple references of this class.
+## ## Author
 
-2. Use of "Factory Design Pattern" for creating Rectangles to generate the new Hills in Game. 
-## RUNNING CODE
-1. Go to HelloApplication.java file run the start method. It will give you two buttons for Play and Exit. 
-- The Exit button will call terminateProgram method of HelloController.java which will terminate the whole game.
-- The Play button will call startGame method of HelloController.java which will eventually start the GamePlay.
+* **Md Ashif**
+    * *Final-year B.Tech, Computer Science and Engineering*
+    * *Indraprastha Institute of Information Technology Delhi (IIIT Delhi)*
 
-2. You may loose game in following ways:
-- When the length of ladder is less or more than the Hills Co-ordinates.
-- Collide with the hill while the transition is happening from one hill to another and the hero is at the bottom of the ladder.
+---
 
-3. When the player looses the game it will switch to Scene3 which will show overview of the Scores and ask if you still want to continue your run or exit the program.# StickHero
+*This project was developed as part of a Computer Science curriculum, focusing on Software Engineering best practices and Design Patterns.*# StickHero
